@@ -102,6 +102,8 @@ export class GetAllMoviesService {
   }
 }
 
+
+
 //Get one movie----movies/:title
 @Injectable({
   providedIn: 'root'
@@ -332,7 +334,7 @@ export class EditUserService {
 export class DeleteUserService {
   constructor(private http: HttpClient){
   }
-  Deleteuser(username: string): Observable<any> {
+  Deleteuser(): Observable<any> {
     const token = localStorage.getItem('item');
     return this.http.delete(apiUrl + `users/:username`, {headers: new HttpHeaders(
       {
