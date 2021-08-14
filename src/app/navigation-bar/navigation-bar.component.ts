@@ -10,10 +10,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class NavigationBarComponent implements OnInit {
 
+/**
+ * 
+ * @param snackBar 
+ * @param router 
+ */
+
   constructor(public snackBar: MatSnackBar, public router: Router) { }
 
   ngOnInit(): void {
   }
+
+/**
+ * Allow to log out a user
+ */
 
   logOutUser(): void {
     localStorage.clear();

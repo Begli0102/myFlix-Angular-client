@@ -11,11 +11,14 @@ import { UserLoginFormComponent } from '../user-login-form/user-login-form.compo
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-
+/**
+ * This is the function that will open the dialog when the signup button is clicked 
+ * @param dialog 
+ */
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
   }
-  // This is the function that will open the dialog when the signup button is clicked  
+   
   openUserRegistrationDialog(): void {
       this.dialog.open(UserRegistrationFormComponent, {
   // Assigning the dialog a width

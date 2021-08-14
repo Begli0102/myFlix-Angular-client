@@ -21,7 +21,15 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any[] = [];
   favorites: any = [];
-
+/**
+ * 
+ * @param fetchApiData 
+ * @param fetchApiData2 
+ * @param fetchApiData3 
+ * @param router 
+ * @param snackBar 
+ * @param dialog 
+ */
   constructor(
     public fetchApiData: GetAllMoviesService,
     public fetchApiData2: DeleteFavMovieService,
@@ -36,12 +44,15 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Allow to get user
+   */
   getUser(): void {
     let FavoriteMovies = localStorage.getItem('FavoriteMovies');
     let Username = localStorage.getItem('user');
     let Email = localStorage.getItem('Email');
     let Birthday = localStorage.getItem('Birthday');
-    this.user = {
+    this.user= {
       "FavoriteMovies": FavoriteMovies,
       "Username": Username,
       "Email": Email,
@@ -50,6 +61,10 @@ export class UserProfileComponent implements OnInit {
     this.getMovies();
   }
 
+  /**
+   * Allows to get all movies
+   */
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -57,6 +72,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * 
+   * @returns {object}
+   */
   filterFavorites(): void {
     this.movies.forEach((movie: any) => {
       if (this.user.FavMovies.includes(movie._id)) {
@@ -66,7 +85,11 @@ export class UserProfileComponent implements OnInit {
     return this.favorites;
   }
 
-
+/**
+ * 
+ * @param id 
+ * @param title
+ */
   removeFavorites(id: string, title: string): void {
     this.fetchApiData2. DeleteUserFavMovie(id).subscribe((resp) => {
       console.log(resp);
@@ -85,6 +108,10 @@ export class UserProfileComponent implements OnInit {
     }, 1000);
   }
 
+  /**
+   * Allow to delete a user
+   */
+
   deleteUser(): void {
     let check = confirm(
       'This will delete your profile! Are you sure you want to continue?'
@@ -101,6 +128,11 @@ export class UserProfileComponent implements OnInit {
       window.location.reload();
     }
   }
+
+  /**
+   * Allows to update the profile
+   */
+
   profileUpdateDialog(): void {
     this.dialog.open(UserProfileUpdateComponent, {
       panelClass: 'update-dialog',

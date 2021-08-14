@@ -8,6 +8,12 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   encapsulation: ViewEncapsulation.None,
 })
 export class DirectorComponent implements OnInit {
+
+  /**
+   * 
+   * @param data 
+   */
+
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

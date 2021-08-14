@@ -17,6 +17,15 @@ import { GenreComponent } from '../genre/genre.component';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+
+/**
+ * 
+ * @param fetchApiData 
+ * @param fetchApiData2 
+ * @param dialog 
+ * @param snackBar 
+ */
+
   constructor(
     public fetchApiData: GetAllMoviesService,
     public fetchApiData2: AddMovieService,
@@ -28,6 +37,10 @@ ngOnInit(): void {
   this.getMovies();
 }
 
+/**
+ * Allow to get all movies
+ */
+
 getMovies(): void {
   this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -35,6 +48,15 @@ getMovies(): void {
       return this.movies;
     });
   }
+
+/**
+ * 
+ * @param title 
+ * @param imagePath 
+ * @param description 
+ * @param director 
+ * @param genre 
+ */
 
   showDetails(
     title: string,
@@ -49,6 +71,12 @@ getMovies(): void {
     });
   }
 
+  /**
+   * 
+   * @param name 
+   * @param description 
+   */
+
   showGenre(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: { name, description },
@@ -56,6 +84,14 @@ getMovies(): void {
     });
   }
 
+
+  /**
+   * 
+   * @param name 
+   * @param bio 
+   * @param birth 
+   * @param death 
+   */
   showDirector(
     name: string,
     bio: string,
@@ -68,6 +104,12 @@ getMovies(): void {
     });
   }
 
+
+  /**
+   * 
+   * @param id 
+   * @param title 
+   */
   addFavorite(id: string, title: string): void {
     this.fetchApiData2.addFavMovie(id).subscribe((resp: any) => {
       console.log(resp);
