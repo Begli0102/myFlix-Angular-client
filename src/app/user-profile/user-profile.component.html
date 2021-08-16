@@ -7,8 +7,19 @@
 
     <p class="data">USERNAME</p>
     <p>{{user.Username}}</p>
-    <p class="data">PASSWORD</p>
+    <!-- <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="user.Password"
+        type = "password"
+        placeholder="Password"
+        name="Password"
+        required
+      >
+    </mat-form-field> -->
+   <p class="data">PASSWORD</p>
     <p>{{user.Password}}</p>
+
     <p class="data">EMAIL</p>
     <p>{{user.Email}}</p>
     <p class="data">BIRTHDAY</p>
@@ -31,12 +42,12 @@
   <div class="favorite-movies">
     <h2>My Favorite Movies</h2>
 
-    <div style="display: flex; flex-wrap: wrap; text-align: center;">
+    <div style="display: flex; text-align: center;">
       <mat-card *ngFor="let favorite of favorites;" style="flex: 0 1 auto; margin: 10px;">
         <mat-card-actions>
           <mat-icon
-            style="color: red;font-weight: 300; cursor: pointer; right: 0; top: 0; position: absolute; padding: 0;"
-            aria-label='Remove Movie from Favorite' (click)='removeFavorites(favorite._id, favorite.Title)'>
+            style="color: rgb(206, 203, 203);font-weight: 300; cursor: pointer; right: 0; top: 0; position: absolute; padding: 0;"
+            aria-label='Remove Movie from Favorite' (click)='removeFavorites(favorite._id, favorite.title)'>
             delete_outline
           </mat-icon>
         </mat-card-actions>
@@ -44,12 +55,8 @@
           <mat-card-title>{{favorite.Title}}</mat-card-title>
           <mat-card-subtitle>{{favorite.Director.Name}}</mat-card-subtitle>
         </mat-card-header>
-        <img src={{favorite.ImagePath}} alt={{favorite.Title}} />
+        <img src={{favorite.ImagePath}} alt={{favorite.Title}} style="width:300px;" />
       </mat-card>
     </div>
-
-
-
-
   </div>
 </div>

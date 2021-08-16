@@ -47,6 +47,7 @@ const appRoutes: Routes = [
     DetailsComponent,
     DirectorComponent,
     GenreComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -65,5 +66,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

@@ -2,24 +2,20 @@
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: left; ">
   <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; font-family:Georgia, 'Times New Roman', Times, serif; ">
-    <mat-card-actions>
-        <mat-icon style="color: rgb(170, 43, 43);  cursor: pointer; display: flex;"
-          aria-label='Add movie to favorites button' (click)='addFavorite(movie._id, movie.Title)'>favorite_border
-        </mat-icon>
-      </mat-card-actions>  
-    <mat-card-header >
+   
+    <mat-card-header style=" margin-top: 25px;">
       <mat-card-title style="font-size: 25px;">{{movie.Title}}</mat-card-title>
           <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
       </mat-card-header>
-      <img src={{movie.ImagePath}} alt= {{movie.Title}} style="text-align:center; width:300px; display:flex;" />
-      <mat-card-actions>
-        <button mat-button color="primary" (click)='showGenre(
+      <img src={{movie.ImagePath}} alt= {{movie.Title}} style="text-align:center; width:300px; margin: 15px;" />
+      <mat-card-actions class="action-card">
+        <button mat-button  (click)='showGenre(
           movie.Genre.Name,
           movie.Genre.Description
           )'>
           Genre
         </button>
-        <button mat-button color="primary" (click)='showDirector(
+        <button mat-button  (click)='showDirector(
           movie.Director.Name,
           movie.Director.Bio,
           movie.Director.Birth,
@@ -27,7 +23,7 @@
           )'>
           Director
         </button>
-        <button mat-button color="primary" (click)='showDetails(
+        <button mat-button  (click)='showDetails(
           movie.Title,
           movie.ImagePath,
           movie.Description,
@@ -36,6 +32,11 @@
           )'>
           Details
         </button>
+        <mat-card-actions>
+          <mat-icon style="color: rgb(170, 43, 43);  cursor: pointer; "
+            aria-label='Add movie to favorites button' (click)='addFavorite(movie._id, movie.Title)'>favorite_border
+          </mat-icon>
+        </mat-card-actions>  
       </mat-card-actions>
   </mat-card>
 </div>

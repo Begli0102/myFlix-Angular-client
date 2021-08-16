@@ -296,12 +296,19 @@ export class AddMovieService {
  * @param _id 
  * @returns Request to the database (Endpoint: 'users/:username/movies/:movieId', Method: PUT)
  */
+
   addFavMovie(_id: string): Observable<any> {
-    const token = localStorage.getItem('item');
-    return this.http.put(apiUrl + `users/:username/movies/:movieId`, {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}).pipe(
+    const token = localStorage.getItem('token');
+    const user =localStorage.getItem('user') 
+    return this.http.put(apiUrl + `users/${user}/movies/${_id}`,{} ,{
+      headers: new HttpHeaders()
+    .set('Authorization',  `Bearer `+ token)
+
+
+      // headers: new HttpHeaders({
+      //   Authorization: 'Bearer ' + token,
+      // })
+      }).pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
       );
@@ -423,11 +430,17 @@ export class DeleteFavMovieService {
    * @returns Request to the database (Endpoint: 'users/:username/movies/:movieId', Method: DELETE)
    */
   DeleteUserFavMovie(_id: string): Observable<any> {
-    const token = localStorage.getItem('item');
-    return this.http.delete(apiUrl + `users/:username/movies/:movieId`, {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}).pipe(
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user')
+    return this.http.delete(apiUrl + `users/${user}/movies/${_id}`,{
+      headers: new HttpHeaders()
+      .set('Authorization',  `Bearer `+ token)
+  
+      // headers:  new HttpHeaders(
+      // {
+      //   Authorization: 'Bearer ' + token,
+      // })
+    }).pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
       );

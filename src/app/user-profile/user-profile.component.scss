@@ -26,3 +26,8 @@ button {
 .data {
   font-weight: 700;
 }
+
+.favorite-movies{
+  display: flex;
+  flex-direction: column;
+}
