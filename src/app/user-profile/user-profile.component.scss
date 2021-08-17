@@ -1,19 +1,13 @@
-.profile-card-container {
-  text-align: center;
-  display:flex;
-  flex-direction: column;
 
- 
-}
 
 h1 {
 border-bottom: 1px solid lightgrey;
 margin-bottom: 40px;
 }
 
-.account-container {
+.page-container {
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 text-align: center;
 margin: 25px;
@@ -30,4 +24,16 @@ button {
 .favorite-movies{
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+}
+.header{
+  text-align: center;
+ display: flex;
+ flex-direction: row;
+}
+
+
+
+.profile-card-container{
+  font-family:Georgia, 'Times New Roman', Times, serif;   
 }

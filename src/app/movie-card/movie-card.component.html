@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around; text-align: left; ">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto; font-family:Georgia, 'Times New Roman', Times, serif; ">
+<div class="card" style=" display: flex; flex-wrap: wrap; justify-content: space-between; text-align: left; ">
+  <mat-card *ngFor="let movie of movies;" style="flex:  1 auto; font-family:Georgia, 'Times New Roman', Times, serif; ">
    
     <mat-card-header style=" margin-top: 25px;">
       <mat-card-title style="font-size: 25px;">{{movie.Title}}</mat-card-title>
@@ -33,7 +33,7 @@
           Details
         </button>
         <mat-card-actions>
-          <mat-icon style="color: rgb(170, 43, 43);  cursor: pointer; "
+          <mat-icon class='icon'style=" cursor: pointer; "
             aria-label='Add movie to favorites button' (click)='addFavorite(movie._id, movie.Title)'>favorite_border
           </mat-icon>
         </mat-card-actions>  

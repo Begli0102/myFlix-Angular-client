@@ -114,9 +114,9 @@ getMovies(): void {
     this.fetchApiData2.addFavMovie(id).subscribe((resp: any) => {
       console.log(resp);
       let favmovies = resp.FavoriteMovies;
-      localStorage.setItem('FavoriteMovies', favmovies);
+      // localStorage.setItem('FavoriteMovies', favmovies);
       this.snackBar.open(`${title} has been added to your favorite movies list`, 'OK', {
-        duration: 2000,
+        duration: 3000,
       });
     });
 

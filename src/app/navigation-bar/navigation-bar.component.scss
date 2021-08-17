@@ -4,6 +4,7 @@
   height: 56px;
   margin-bottom: 60px;
   background-color: rgb(67, 68, 68);
+
 }
 
 .nav-container {
@@ -13,11 +14,13 @@
   flex-flow: row wrap;
   align-items: center;
   // justify-content: space-between;
+  font-size: 40px;
 }
 
 .nav-links{
   line-height: 30px;
   width: 190px;
+  font-size: 20px;
 }
 
 .nav-links-right {
@@ -25,6 +28,7 @@
   justify-content: space-evenly;
   cursor: pointer;
   float: right;
+  font-size: 20px;
 }
 
 .nav-title {
@@ -36,5 +40,5 @@
 .profile, .logout {
   text-decoration: none;
   color: white;
-  font-size: 12px;
+  font-size: 18px;
 }

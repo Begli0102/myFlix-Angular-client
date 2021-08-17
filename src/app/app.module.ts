@@ -65,7 +65,8 @@ const appRoutes: Routes = [
     MatIconModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
   
+  exports: [ MatFormFieldModule, MatInputModule ]
 })
 export class AppModule { }

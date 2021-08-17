@@ -3,13 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetAllMoviesService } from '../fetch-api-data.service';
 import { DeleteFavMovieService } from '../fetch-api-data.service';
-import { DeleteUserService } from '../fetch-api-data.service';
+import { DeleteUserService} from '../fetch-api-data.service';
+import { GetUserService } from '../fetch-api-data.service';
+
+
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
 import { UserProfileUpdateComponent } from '../user-profile-update/user-profile-update.component'
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-profile',
@@ -34,9 +39,12 @@ export class UserProfileComponent implements OnInit {
     public fetchApiData: GetAllMoviesService,
     public fetchApiData2: DeleteFavMovieService,
     public fetchApiData3: DeleteUserService,
+    public fetchApiUserData: GetUserService,
     public router: Router,
     public snackBar: MatSnackBar,
     public dialog: MatDialog,
+    public form: MatFormFieldModule,
+     public input: MatInputModule
 
   ) { }
 
@@ -47,19 +55,28 @@ export class UserProfileComponent implements OnInit {
   /**
    * Allow to get user
    */
-  getUser(): void {
-    let FavoriteMovies = localStorage.getItem('FavoriteMovies');
-    let Username = localStorage.getItem('user');
-    let Email = localStorage.getItem('Email');
-    let Birthday = localStorage.getItem('Birthday');
-    this.user= {
-      "FavoriteMovies": FavoriteMovies,
-      "Username": Username,
-      "Email": Email,
-      "Birthday": Birthday,
-    }
-    this.getMovies();
-  }
+  // getUser(): void {
+  //   let FavoriteMovies = localStorage.getItem('FavoriteMovies');
+  //   let Username = localStorage.getItem('user');
+  //   let Email = localStorage.getItem('Email');
+  //   let Birthday = localStorage.getItem('Birthday');
+  //   this.user= {
+  //     "FavoriteMovies": FavoriteMovies,
+  //     "Username": Username,
+  //     "Email": Email,
+  //     "Birthday": Birthday,
+  //   }
+  //   this.getMovies();
+  // }
+  
+getUser(): void {
+  this.fetchApiUserData.GetUser().subscribe((res:any)=> {
+      this.user=res;
+      this.getMovies();
+    })
+}
+
+
 
   /**
    * Allows to get all movies
@@ -94,7 +111,7 @@ export class UserProfileComponent implements OnInit {
     this.fetchApiData2. DeleteUserFavMovie(id).subscribe((resp) => {
       console.log(resp);
       let favmovies = resp.FavoriteMovies;
-      localStorage.setItem('FavoriteMovies', favmovies);
+      // localStorage.setItem('FavoriteMovies', favmovies);
       this.snackBar.open(
         `${title} has been removed from your favourites!`,
         'OK',

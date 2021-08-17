@@ -384,9 +384,7 @@ button[disabled], html input[disabled] {
  * * 2. Remove excess padding in IE 8/9.
  * * 3. Remove excess padding in IE 7.
  * *    Known issue: excess padding remains in IE 6. */
-input {
-  /* 3 */
-}
+
 input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   /* 1 */
@@ -1837,7 +1835,7 @@ dl.tsd-comment-tags dt {
   float: left;
   padding: 1px 5px;
   margin: 0 10px 0 0;
-  border-radius: 4px;
+ 
   border: 1px solid var(--color-comment-tag);
   color: var(--color-comment-tag);
   font-size: 0.8em;
@@ -2047,7 +2045,7 @@ footer .tsd-legend {
 .tsd-flag {
   display: inline-block;
   padding: 1px 5px;
-  border-radius: 4px;
+ 
   color: var(--color-comment-tag-text);
   background-color: var(--color-comment-tag);
   text-indent: 0;

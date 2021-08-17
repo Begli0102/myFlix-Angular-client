@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { EditUserService } from '../fetch-api-data.service';
 
@@ -26,7 +26,11 @@ export class UserProfileUpdateComponent implements OnInit {
   constructor(
     public fetchUserData: EditUserService,
     public dialogRef: MatDialogRef<UserProfileUpdateComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public form: MatFormFieldModule,
+    public input: MatInputModule
+
+
   ) { }
 
   ngOnInit(): void {

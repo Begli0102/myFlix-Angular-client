@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
   <mat-card-header>
     <mat-card-title>Update Profile</mat-card-title>
   </mat-card-header>
@@ -31,4 +31,14 @@
   <mat-card-actions>
     <button mat-raised-button (click)='editUser()' color="primary">Update</button>
   </mat-card-actions>
-</mat-card>
+</mat-card> -->
+<div class="profile-info">
+<p class="data">USERNAME</p>
+<p>{{userData.Username}}</p>
+<p class="data">PASSWORD</p>
+ <p>{{userData.Password}}</p> 
+<p class="data">EMAIL</p>
+<p>{{userData.Email}}</p>
+<p class="data">BIRTHDAY</p>
+<p>{{userData.Birthday | date: "dd/MM/yyyy":"UTC" || "N/A"}}</p> 
+</div>

@@ -255,9 +255,10 @@ export class GetUserService {
    */
 
   GetUser(): Observable<any> {
-    const token = localStorage.getItem('item');
-   
-    return this.http.get(apiUrl + `users/username`, {headers: new HttpHeaders(
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+
+    return this.http.get(apiUrl + `users/${user}`, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -389,11 +390,16 @@ export class DeleteUserService {
  */
 
   Deleteuser(): Observable<any> {
-    const token = localStorage.getItem('item');
-    return this.http.delete(apiUrl + `users/:username`, {headers: new HttpHeaders(
-      {
-        Authorization: 'Bearer ' + token,
-      })}).pipe(
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
+    return this.http.delete(apiUrl + `users/${user}`, {
+      headers: new HttpHeaders()
+      .set('Authorization',  `Bearer `+ token)
+      // headers: new HttpHeaders(
+      // {
+      //   Authorization: `Bearer` + token,
+      // })
+      }).pipe(
         map(this.extractResponseData),
         catchError(this.handleError)
       );
@@ -431,15 +437,15 @@ export class DeleteFavMovieService {
    */
   DeleteUserFavMovie(_id: string): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user')
+    const user = localStorage.getItem('user');
     return this.http.delete(apiUrl + `users/${user}/movies/${_id}`,{
-      headers: new HttpHeaders()
-      .set('Authorization',  `Bearer `+ token)
+      // headers: new HttpHeaders()
+      // .set('Authorization',  `Bearer `+ token)
   
-      // headers:  new HttpHeaders(
-      // {
-      //   Authorization: 'Bearer ' + token,
-      // })
+      headers:  new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })
     }).pipe(
         map(this.extractResponseData),
         catchError(this.handleError)

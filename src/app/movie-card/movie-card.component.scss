@@ -7,10 +7,41 @@
 margin-left: 20px;
 }
 
-.mat-icon{
+.icon{
  float: right;
 margin-top: 15px;
 margin-left: 15px;
 
-}
+color: rgb(170, 43, 43);
 
+
+}
+// .icon:before{
+  
+//   float: right;
+//   margin-top: 15px;
+//   margin-left: 15px;
+//   background-size: cover;
+//   color: rgb(170, 43, 43);
+//   background-position: center center;
+// }
+
+.icon:hover{
+color:  rgb(223, 24, 24);
+transition: bold;
+}
+.icon:active{
+  color:  rgb(243, 243, 243);
+
+  }
+
+  .icon:visited{
+    color:  rgb(243, 243, 243);
+    }
+    .icon:focus{
+      color:  rgb(243, 243, 243);
+      }
+.mat-card{
+  box-shadow: none;
+  border-radius: 0%;
+}
