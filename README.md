@@ -1,6 +1,9 @@
 # MyFlixAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+## Overview
+This application was bilt with Angular.In this application the user can 
+
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
 ## Development server
 
