@@ -2,7 +2,7 @@
 
 ## Overview
 MyFLix application is responsive movie app built with Angular, with routing and several interface views. The client-side will support the existing
-server-side from Achievement 2 by facilitating user requests and rendering the response from [Movie Api Repository](https://github.com/Begli0102/movie_api) the server-side via a number of different interface views. In this app the user will be able to see movies, see their details, genre informations,director informations, add them to the favorite,delete them and update profile informaton
+server-side by facilitating user requests and rendering the response from [Movie Api Repository](https://github.com/Begli0102/movie_api) server-side via a number of different interface views. In this app the user will be able to see movies, see their details, genre informations,director informations, add them to the favorite,delete them and update profile informaton
 
 - This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
