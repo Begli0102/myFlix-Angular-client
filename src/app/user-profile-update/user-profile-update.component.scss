@@ -4,10 +4,48 @@
  width: 80vh;
  height: auto;
  justify-content: space-between;
- padding-top: 10px;
+ margin-top: 10px;
+ text-align: center;
+  justify-content: center;
+  align-items: center;
+ 
 }
-.mat-card-title{
+.mat-card-header{
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+#username{
+  margin-left: 20px;
+  width: 200px;
+  
+}
+#email{
+  margin-left: 40px;
+  width: 200px;
+}
+#password{
+  margin-left: 20px;
+  width: 200px;
+}
+#birthday{
+  margin-left:30px;
+  width: 200px;
+}
+.label{
+ margin-right: 10px;
+}
+.username{
+margin-bottom: 10px;
+}
+.password{
+  margin-bottom: 10px;
+}
+.email{
+  margin-bottom: 10px;
+  margin-right: -10px;
+}
+.birthday{
+  margin-bottom: 10px;
+
 }

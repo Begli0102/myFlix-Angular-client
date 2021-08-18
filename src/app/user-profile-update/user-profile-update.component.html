@@ -5,7 +5,7 @@
   <mat-card-content>
     <form >
       <!-- <mat-form-field> -->
-      <div>
+      <div class="username">
           <label for="Username">Username</label>
           <input matInput id="username" [(ngModel)]='userData.Username' type='text' placeholder='Enter your username'
             name='Username' autocomplete="username" required />
@@ -13,15 +13,15 @@
       
        
   
-        <div>
+        <div class="password">
           <label for="Password">Password</label>
           <input matInput  id="password" [(ngModel)]='userData.Password' type='password' placeholder='Enter your password'
             name='Password' required />
         </div>
        
-        <div>
+        <div class="email">
           <label for="Email">Email</label>
-           <input
+           <input id="email"
           matInput
           [(ngModel)]='userData.Email'
           type='email'
@@ -29,7 +29,7 @@
           name='Email'
           required />
         </div>
-        <div>
+        <div class="birthday">
           <label for="Birthday">Birthday</label>
           <input matInput  id="birthday" [(ngModel)]='userData.Birthday' type='date' name='Birthday' />
         </div>
