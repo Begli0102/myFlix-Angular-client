@@ -55,19 +55,6 @@ export class UserProfileComponent implements OnInit {
   /**
    * Allow to get user
    */
-  // getUser(): void {
-  //   let FavoriteMovies = localStorage.getItem('FavoriteMovies');
-  //   let Username = localStorage.getItem('user');
-  //   let Email = localStorage.getItem('Email');
-  //   let Birthday = localStorage.getItem('Birthday');
-  //   this.user= {
-  //     "FavoriteMovies": FavoriteMovies,
-  //     "Username": Username,
-  //     "Email": Email,
-  //     "Birthday": Birthday,
-  //   }
-  //   this.getMovies();
-  // }
   
 getUser(): void {
   this.fetchApiUserData.GetUser().subscribe((res:any)=> {
@@ -134,9 +121,9 @@ getUser(): void {
       'This will delete your profile! Are you sure you want to continue?'
     );
     if (check) {
-      this.fetchApiData3.Deleteuser().subscribe(() => {
+      this.fetchApiData3.DeleteUser().subscribe(() => {
         localStorage.clear();
-        this.router.navigate(['welcome']);
+        this.router.navigate(['/welcome']);
         this.snackBar.open('Profile deleted', 'OK', {
           duration: 2000,
         });

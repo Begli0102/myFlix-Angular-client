@@ -1,0 +1,13 @@
+.mat-card-content{
+ display: flex;
+ flex-direction: column;
+ width: 80vh;
+ height: auto;
+ justify-content: space-between;
+ padding-top: 10px;
+}
+.mat-card-title{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

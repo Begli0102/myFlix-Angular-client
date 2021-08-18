@@ -348,9 +348,10 @@ export class EditUserService {
  */
 
   EditUserInfo(userDetails: any): Observable<any> {
-    const token = localStorage.getItem('item');
+    const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user');
     console.log(userDetails);
-    return this.http.put(apiUrl + `users/username`, userDetails,  {headers: new HttpHeaders(
+    return this.http.put(apiUrl + `users/${user}`, userDetails,  {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
@@ -389,9 +390,10 @@ export class DeleteUserService {
  * @returns Request to the database (Endpoint: 'users/username', Method: DELETE)
  */
 
-  Deleteuser(): Observable<any> {
+  DeleteUser(): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
+    
     return this.http.delete(apiUrl + `users/${user}`, {
       headers: new HttpHeaders()
       .set('Authorization',  `Bearer `+ token)
